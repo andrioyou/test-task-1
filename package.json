@@ -3,10 +3,13 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "nx serve test-task-1"
+    "build": "nx build test-task-1",
+    "start": "nx serve test-task-1",
+    "lint": "nx lint test-task-1"
   },
   "private": true,
   "dependencies": {
+    "pinia": "^3.0.4",
     "vue": "^3.5.13"
   },
   "devDependencies": {

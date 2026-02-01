@@ -143,6 +143,11 @@ button {
     background-color: $c-white;
     color: $c-black;
   }
+
+  &:disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
 }
 
 ol {
@@ -264,4 +269,28 @@ blockquote {
 
 figure {
   margin: 15px 0;
+}
+
+caption {
+  background-color: $c-primary;
+  text-align: left;
+  padding: 5px;
+  border: 2px solid $c-light;
+  border-bottom: 0;
+  font-size: 15px;
+}
+
+table {
+  width: 100%;
+  background-color: $c-light;
+}
+
+thead { 
+  background-color: $c-primary;
+}
+
+th, td {
+  padding: 5px;
+  text-align: left;
+  font-size: 13px;
 }

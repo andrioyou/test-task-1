@@ -1,7 +1,7 @@
 <script setup lang="ts">
-
+import HorseRacingGame from './horse-racing-game/container/horse-racing-game.vue';
 </script>
 
 <template>
-  <h1>Test</h1>
+  <HorseRacingGame />
 </template>

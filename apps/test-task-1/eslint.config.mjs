@@ -11,6 +11,10 @@ export default [
         parser: await import('@typescript-eslint/parser'),
       },
     },
+    rules: {
+      'vue/max-attributes-per-line': 0,
+      'vue/singleline-html-element-content-newline': 0,
+    }
   },
   {
     files: ['**/*.ts', '**/*.tsx', '**/*.js', '**/*.jsx', '**/*.vue'],
