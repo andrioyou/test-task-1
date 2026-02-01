@@ -20,10 +20,12 @@ const emit = defineEmits<{
 function startHorseRace(): void {
   let maxTimeinSeconds = 0;
   const horseResults = props.round.horses.map(horse => {
-    // Time is from 3 to 8 seconds
+    
+    // Time is from 3 to 8 seconds if round distance is 1000 meters
     const minTime = 3;
     const duration = 5;
-    const timeInSeconds = Math.round((getRandomNumber(duration * 100) / 100 + minTime) * 100) / 100;
+    const timeInSeconds = Math.round(((getRandomNumber(duration * 100) / 100 + minTime) * 100) * props.round.distance / 1000) / 100;
+
     if (timeInSeconds > maxTimeinSeconds) maxTimeinSeconds = timeInSeconds;
     const horseWithRoundResults: HorseWithRoundResults = {
       ...horse,

@@ -39,10 +39,11 @@ export const HorseRacingGameStore = defineStore('horseRacingGameStore', {
 
       const numberOfHorsesPerRound = 10;
 
-      rounds.forEach((roundLength) => {
+      rounds.forEach((distance) => {
         const horsesForRound = getRandomUnique(this.horses, numberOfHorsesPerRound);
         const round: Round = {
-          name: `${roundLength} meters`,
+          name: `${distance} meters`,
+          distance,
           horses: horsesForRound,
           horseResults: [],
         };
