@@ -1,0 +1,296 @@
+@use './vars' as *;
+@use './mixins' as *;
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: $f-primary;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+table,
+iframe {
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+  &:first-child {
+    margin-top: 0;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+  line-height: 1.25;
+}
+
+h1,
+.h1 {
+  font-size: 40px;
+
+  @include large-size-max {
+    font-size: 32px;
+  }
+}
+h2,
+.h2 {
+  font-size: 36px;
+
+  @include large-size-max {
+    font-size: 30px;
+  }
+}
+h3,
+.h3 {
+  font-size: 32px;
+
+  @include large-size-max {
+    font-size: 28px;
+  }
+}
+h4,
+.h4 {
+  font-size: 28px;
+
+  @include large-size-max {
+    font-size: 24px;
+  }
+}
+h5,
+.h5 {
+  font-size: 24px;
+
+  @include large-size-max {
+    font-size: 20px;
+  }
+}
+h6,
+.h6 {
+  font-size: 20px;
+
+  @include large-size-max {
+    font-size: 16px;
+  }
+}
+
+p {
+  line-height: 1.5;
+
+  &:empty {
+    display: none;
+  }
+}
+
+a {
+  color: $c-primary;
+  text-decoration: none;
+  transition: all $trans-dur ease;
+
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+iframe {
+  width: 100%;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  padding: 5px 20px;
+  border: 1px solid $c-black;
+  background-color: $c-black;
+  color: $c-white;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.6;
+  letter-spacing: 1px;
+  text-align: center;
+  transition: all $trans-dur;
+  cursor: pointer;
+  appearance: none;
+
+  @include large-size-max {
+    padding: 6px 15px;
+  }
+
+  &:hover {
+    background-color: $c-white;
+    color: $c-black;
+  }
+
+  &:disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+}
+
+ol {
+  padding-left: 15px;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+
+  li {
+    &:before {
+      margin-right: 10px;
+      content: '•';
+    }
+  }
+}
+
+li {
+  line-height: 1.5;
+}
+
+label {
+  display: inline-block;
+  font-size: 14px;
+  color: $c-dark;
+  letter-spacing: 0.5px;
+
+  input {
+    &[type='text'] {
+      margin-top: 5px;
+    }
+  }
+}
+
+textarea,
+input,
+select {
+  display: inline-block;
+  margin: 0;
+  min-width: 0;
+  padding: 7px 15px;
+  background-color: $c-light;
+  border: 1px solid $c-light;
+  color: $c-black;
+  font-family: $f-primary;
+  font-size: 16px;
+  line-height: 1.5;
+  transition: all $trans-dur;
+  outline: none;
+  appearance: none;
+
+  @include large-size-max {
+    padding: 6px 15px;
+  }
+
+  &::placeholder {
+    color: $c-secondary;
+  }
+
+  &:hover,
+  &:focus {
+    border-bottom-color: $c-primary;
+  }
+}
+
+input {
+  &[type='color'] {
+    padding: 0 2px;
+  }
+
+  &[type='checkbox'] {
+    margin-right: 10px;
+    padding: 0;
+    width: 14px;
+    height: 14px;
+
+    &:hover,
+    &:focus {
+      border-color: $c-primary;
+    }
+
+    &:checked {
+      background-color: $c-primary;
+    }
+  }
+
+  &[type='radio'] {
+    padding: 6px;
+    border-radius: 50%;
+
+    &:checked {
+      background-color: $c-primary;
+    }
+  }
+}
+
+select {
+  padding-right: 30px;
+  max-width: 100%;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAALCAMAAACu/pY1AAAANlBMVEVHcEw0NDRFRUWVlZUrKyu2trZQUFAAAACAgIDV1dWkpKRgYGDX19ff39/n5+f29vbu7u79/f2yv27WAAAAAXRSTlMAQObYZgAAAEZJREFUCNeNzksOgCAAQ8EnCi3+0Ptf1gVEg4mJXTXTTeFX4nzXMQKwyA2sBMA6NLKmXKet0gOwB7kDOIJ6gJJeAKfz570LgfMBc/K2u9IAAAAASUVORK5CYII=');
+  background-repeat: no-repeat;
+  background-position: 95% center;
+  appearance: none;
+}
+
+textarea {
+  resize: none;
+  height: 150px;
+}
+
+blockquote {
+  border-left: 3px solid $c-primary;
+  margin-left: 0;
+  padding-left: 30px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+figure {
+  margin: 15px 0;
+}
+
+caption {
+  background-color: $c-primary;
+  text-align: left;
+  padding: 5px;
+  border: 2px solid $c-light;
+  border-bottom: 0;
+  font-size: 15px;
+}
+
+table {
+  width: 100%;
+  background-color: $c-light;
+}
+
+thead { 
+  background-color: $c-primary;
+}
+
+th, td {
+  padding: 5px;
+  text-align: left;
+  font-size: 13px;
+}
